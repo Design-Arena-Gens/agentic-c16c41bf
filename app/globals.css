@@ -1,0 +1,37 @@
+:root {
+  --bg-start: #071a3a;
+  --bg-end: #153f7a;
+  --primary: #c6e6ff;
+  --accent: #27c17a; /* stylish green scarf */
+  --sweater: #1a1a1a; /* dark sweater */
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: white;
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.page { min-height: 100dvh; display: flex; flex-direction: column; }
+.container { flex: 1; display: grid; place-items: center; padding: 24px; gap: 24px; }
+.caption { max-width: 960px; text-align: center; color: var(--primary); }
+.caption h1 { margin: 0; font-size: clamp(28px, 4vw, 48px); letter-spacing: 0.02em; }
+.caption p { margin: 8px auto 0; line-height: 1.6; font-size: clamp(14px, 2vw, 18px); opacity: 0.9; }
+
+.footer { display: grid; place-items: center; padding: 16px; opacity: 0.7; font-size: 12px; }
+
+.scene-wrapper { width: min(1200px, 95vw); aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+  background: radial-gradient(120% 120% at 50% -10%, rgba(80,140,255,0.35) 0%, rgba(0,0,0,0) 60%),
+              radial-gradient(60% 60% at 20% 0%, rgba(0,200,255,0.22) 0%, rgba(0,0,0,0) 60%),
+              radial-gradient(60% 60% at 80% 0%, rgba(0,120,255,0.22) 0%, rgba(0,0,0,0) 60%),
+              linear-gradient(180deg, rgba(5,15,40,0.85), rgba(5,15,40,0.95));
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 12px; gap: 16px; }
+}
